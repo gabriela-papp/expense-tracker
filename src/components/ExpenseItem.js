@@ -13,7 +13,7 @@ const clickHandler=()=>{
         <div className='expense-item'>
             <div>{date}</div>
             <div className='expense-item__description '>
-                <h2>{title}hello</h2>
+                <h2>{title}</h2>
                 <div className='expense-item__price'>{amount}</div>
             </div>
             <button onClick={clickHandler}>Change Title</button>

@@ -1,23 +1,30 @@
 import { useState } from 'react'
 import './ExpenseItem.style.css'
 
-const ExpenseItem=(expense)=>{
+const ExpenseItem=(props)=>{
     const [item, setItem]= useState()
 const clickHandler=()=>{
 
 }
-
-    const {title,date,amount}=expense.expense
-    {console.log(expense.expense)}
+console.log(props.items)
+    const {title,date,amount,id}=props.items
+    
     return(
-        <div className='expense-item'>
-            <div>{date}</div>
-            <div className='expense-item__description '>
-                <h2>{title}</h2>
-                <div className='expense-item__price'>{amount}</div>
+               <div>
+        {props.items.map(expense=>(
+            
+            <div className='expense-item'>
+               <div>{expense.date}</div>
+               <div className='expense-item__description '>
+                   <h2>{expense.title}</h2>
+                   <div className='expense-item__price'>{expense.amount}</div>
+               </div>
+               <button onClick={clickHandler}>Change Title</button>
+           </div>
+           ))}
             </div>
-            <button onClick={clickHandler}>Change Title</button>
-        </div>
+                    
+                
     )
 }
 
